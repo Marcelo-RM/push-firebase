@@ -1,14 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Push notification using node</title>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-analytics.js"></script>
+
 </head>
+
 <body>
     <h1>Push notification using firebase</h1>
 
     <script src="client.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyBz2823-vTmfN9XUHMyXyWhG7fXjcgGMs0",
+            authDomain: "push-notification-3692c.firebaseapp.com",
+            databaseURL: "https://push-notification-3692c.firebaseio.com",
+            projectId: "push-notification-3692c",
+            storageBucket: "push-notification-3692c.appspot.com",
+            messagingSenderId: "43838738944",
+            appId: "1:43838738944:web:e3676d935ccd73baad3ee5",
+            measurementId: "G-H57H9LS55W"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
 </body>
+
 </html>
