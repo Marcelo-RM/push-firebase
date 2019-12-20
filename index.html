@@ -12,6 +12,7 @@
     <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-messaging.js"></script>
 
 </head>
 
@@ -34,6 +35,23 @@
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         firebase.analytics();
+
+        const messaging = firebase.messaging();
+        messaging.requestPermission()
+            .then(function () {
+                console.log('[FIREBASE] Have permission');
+                return messaging.getToken();
+            })
+            .then(function (token) {
+                console.log(token);
+            })
+            .catch(function (err) {
+                console.log(err);
+            });
+
+        messaging.onMessage(function (payload) {
+            console.log("onMessage: ", payload);
+        });
     </script>
 </body>
 
